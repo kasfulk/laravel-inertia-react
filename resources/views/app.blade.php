@@ -8,7 +8,6 @@
         @inertiaHead 
     </head>
     <body>
-        <div id="root"></div>
         @inertia
     </body>
 </html>

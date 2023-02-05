@@ -1,16 +1,17 @@
 import './bootstrap';
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from '@inertiajs/progress';
 import { MantineProvider } from '@mantine/core';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
 createInertiaApp({
-    resolve: name => import(`./Pages/${name}.jsx`),
+    resolve: name => {
+        const pages = import.meta.glob('./Pages/**/*.jsx', { eager: true })
+        return pages[`./Pages/${name}.jsx`]
+      },
     setup({ el, App, props }) {
-        root.render(<React.StrictMode>
+        createRoot(el).render(<React.StrictMode>
                       <MantineProvider withNormalizeCSS withGlobalStyles>
                         <App {...props} />
                       </MantineProvider>

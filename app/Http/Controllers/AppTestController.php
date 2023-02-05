@@ -7,7 +7,8 @@ use Inertia\Inertia;
 
 class AppTestController extends Controller
 {
-    public function show() {
+    public function show(Request $request) {
+        dd($request);
         return Inertia::render('Test');
     }
 
