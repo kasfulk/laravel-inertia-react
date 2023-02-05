@@ -5,8 +5,6 @@
       "buildCommand": "php artisan optimize:clear && php artisan config:cache && php artisan migrate && npx vite build"
     },
     "deploy": {
-      "startCommand": "php artisan queue:listen",
-      "healthcheckPath": "/",
       "restartPolicyType": "ON_FAILURE",
       "restartPolicyMaxRetries": 10
     }
