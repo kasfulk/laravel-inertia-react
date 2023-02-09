@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia; 
+use Inertia\Inertia;
 
-class AppTestController extends Controller
+class AppController extends Controller
 {
+    public function index(Request $request) {
+        return Inertia::render('Index');
+    }
+
     public function show(Request $request) {
-        dd($request);
         return Inertia::render('Test');
     }
 

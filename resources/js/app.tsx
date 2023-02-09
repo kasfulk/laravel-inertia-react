@@ -7,8 +7,9 @@ import { MantineProvider } from '@mantine/core';
 
 createInertiaApp({
     resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.jsx', { eager: true })
-        return pages[`./Pages/${name}.jsx`]
+      // @ts-ignore
+        const pages = import.meta.glob('./Pages/**/*.tsx', { eager: true })
+        return pages[`./Pages/${name}.tsx`]
       },
     setup({ el, App, props }) {
         createRoot(el).render(<React.StrictMode>

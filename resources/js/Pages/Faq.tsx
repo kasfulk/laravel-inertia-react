@@ -33,7 +33,6 @@ export default function Faq() {
       <Title align="center" className={classes.title}>
         Frequently Asked Questions
       </Title>
-
       <Accordion variant="separated">
         <Accordion.Item className={classes.item} value="reset-password">
           <Accordion.Control>How can I reset my password?</Accordion.Control>
